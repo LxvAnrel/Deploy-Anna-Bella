@@ -1,0 +1,51 @@
+body {
+  background: #d2d2c1 url(fundo.png);
+  font: 16px Arial, Helvetica, Sans-Serif;
+}
+
+#principal {
+  width: 900px;
+  /* Define a largura da div */
+}
+
+#menu {
+  background: #c5c5b2;
+  border: solid 2px rgb(8, 8, 91);
+  height: 35px;
+}
+
+.link {
+  color: #4b566a;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+  display: inline-flex;
+  margin: 1px;
+  
+}
+
+a:hover {
+  color: white;
+}
+
+#conteudo {
+  background: #ebebeb;
+  padding: 10px;
+}
+
+.centralizado {
+  text-align: center;
+  font-weight: bolder;
+}
+
+h1 {
+  color: #828271;
+  font-size: 20px;
+  /* Pode usar medida em 1.2em ou em px, cada um equivale a 16 pixels */
+}
+
+/* Campanha publicitária */
+
+.img-campanha {
+  border: 10px solid #c3c3ae;
+}
