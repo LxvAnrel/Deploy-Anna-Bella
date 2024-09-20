@@ -1,0 +1,133 @@
+/* Reset básico */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4; /* Cor de fundo para áreas onde a imagem não cobre */
+  background-image: url("iimg.jpg"); /* Caminho da imagem de fundo */
+  background-size: cover; /* Faz com que a imagem cubra toda a área de fundo */
+  background-position: center; /* Centraliza a imagem no fundo */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  width: 100%;
+  min-height: 100vh; /* Garante que o corpo ocupe toda a altura da viewport */
+}
+
+/* Estilo dos Pop up's de informações */
+.popup {
+  color: rgb(57, 57, 216);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+}
+.exo_content_popup {
+  visibility: hidden;
+  position: absolute;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do cabeçalho */
+header {
+  background: rgba(246, 30, 99, 0.9); /* Cor de fundo escura com opacidade */
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo da navegação */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo principal */
+main {
+  padding: 1rem;
+}
+
+/* Estilo das seções */
+section {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fundo branco com opacidade para contraste */
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: larger;
+}
+
+section h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo dos links */
+a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo do rodapé */
+footer {
+  background: rgba(246, 30, 99, 0.9); /* Cor de fundo escura com opacidade */
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
