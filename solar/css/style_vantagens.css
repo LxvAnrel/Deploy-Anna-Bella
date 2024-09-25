@@ -1,0 +1,97 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/background_index.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: rgba(32, 229, 255, 0.993);
+    padding: 2vh;
+}
+
+header h1 {
+    font-size: 45px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    font-family: "SUSE", sans-serif;
+}
+
+nav {
+    text-align: center;
+    background-color: rgb(63, 63, 255);
+    padding: 1vh;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    padding: 2vw;
+}
+
+nav a:hover {
+    color: yellow;
+    font-size: 25.5px;
+}
+
+#conteudo {
+    text-align: justify;
+    width: 90vw; /* Mantenha a largura responsiva */
+    max-width: 1200px; /* Aumente a largura máxima para 1200px */
+    margin-top: 8vh;
+    margin-bottom: 20px; /* Adicione uma margem inferior para evitar que toque na tela */
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.titulo {
+    font-size: 32px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-top: 2vh;
+    font-family: "SUSE", sans-serif;
+    text-align: center;
+}
+
+.topico {
+    padding-bottom: 5vh;
+}
+
+p {
+    margin-top: 1.5vh;
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        font-size: 18px;
+        padding: 1vw;
+    }
+
+    #conteudo {
+        width: 80vw; /* Ajuste a largura para 80vw em dispositivos móveis */
+        height: auto; /* Remova a altura fixa para dispositivos móveis */
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+}

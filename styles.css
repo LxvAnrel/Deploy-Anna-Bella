@@ -125,10 +125,11 @@ h2 {
     color: #bbb;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .card {
         width: 45%;
         margin: 20px 2.5%;
+        height: calc(50% - 10px);
     }
 }
 

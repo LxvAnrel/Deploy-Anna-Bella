@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/noite.jpg");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+img {
+    float: right;
+    margin-right: 40px;
+    width: 120px;
+    opacity: 0.15;
+    display: inline-flex;
+}
+
+#seta {
+    display: inline-flex;
+    margin: 10px 20px;
+    width: 100px;
+    float: right;
+}
+
+h2 {
+    display: inline-flex;
+    margin: 35px 0px 0px 180px;
+    font-size: 2.3em;
+    color: white;
+}
+
+#sol {
+    visibility: hidden;
+    width: 130px;
+    float: right;
+    display: block;
+    opacity: 0.53;
+    margin-left: 0;
+}
+
+#processo {
+    visibility: hidden;
+    text-align: center;
+    opacity: 1;
+    width: 95%;
+    margin: 50px 70px;
+    border-radius: 15px;
+}
+
+.container {
+    opacity: 0;
+    width: 65%;
+    border: 0 solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 30px auto;
+    -webkit-box-shadow: 5px 6px 11px -1px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: 5px 6px 11px -1px rgba(0, 0, 0, 0.66);
+    box-shadow: 5px 6px 11px -1px rgba(0, 0, 0, 0.66);
+    background-color: rgba(46, 196, 255, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+
+    img {
+        width: 80px;
+        margin-right: 20px;
+    }
+
+    #seta {
+        width: 60px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin: 20px 0 0 20px;
+    }
+
+    #sol {
+        width: 90px;
+    }
+
+    #processo {
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+}

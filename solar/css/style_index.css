@@ -1,0 +1,94 @@
+    * {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/background_index.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: rgba(18, 227, 255, 0.993);
+    padding: 2vh;
+}
+
+header h1 {
+    font-size: 45px;
+    font-family: "SUSE", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.finalidade {
+    font-size: 32px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-top: 2vh;
+    font-family: "SUSE", sans-serif;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+nav {
+    text-align: center;
+    background-color: rgb(63, 63, 255);
+    padding: 1vh;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    padding: 2vw;
+}
+
+nav a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
+
+#conteudo {
+    text-align: center;
+    height: auto; /* Remova a altura fixa */
+    width: 90vw; /* Mantenha a largura responsiva */
+    max-width: 1200px; /* Aumente a largura máxima para 1200px */
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 4vh;
+    margin-bottom: 20px; /* Adicione uma margem inferior para evitar que toque na tela */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        font-size: 18px;
+        padding: 1vw;
+    }
+
+    #conteudo {
+        width: 80vw; /* Ajuste a largura para 80vw em dispositivos móveis */
+        height: auto; /* Remova a altura fixa para dispositivos móveis */
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .finalidade {
+        font-size: 24px;
+    }
+}
