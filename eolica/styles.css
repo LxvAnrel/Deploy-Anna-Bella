@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    background: #000000;
+    font-size: 20.8px; /* Aumentado de 16px (padrão) para 20.8px (16 * 1.3) */
+  }
+  
+  h1{
+    color: white;
+    text-align: center;
+    font-size: 46.8px; /* Aumentado de 36px (padrão) para 46.8px (36 * 1.3) */
+  }
+
+  .container {
+    align-items: center;
+    transform: scale(1.3);
+    transform-origin: center;
+  }
+  
+  .cssbuttons-io-button {
+    background: #04b96b;
+    color: white;
+    font-family: inherit;
+    padding: 0.455em;
+    padding-left: 1.56em;
+    font-size: 22.1px; /* Aumentado de 17px para 22.1px */
+    font-weight: 500;
+    border-radius: 1.17em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 3.64em;
+    padding-right: 4.29em;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .cssbuttons-io-button:hover {
+    text-decoration: none;
+  }
+  
+  .cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.86em;
+    width: 2.86em;
+    border-radius: 0.91em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.39em;
+    transition: all 0.3s;
+  }
+  
+  .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons-io-button .icon svg {
+    width: 1.43em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+  }
+  
+  .cssbuttons-io-button:hover .icon svg {
+    transform: translateX(0.1em);
+  }
+  
+  .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+  }

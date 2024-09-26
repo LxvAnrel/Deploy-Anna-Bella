@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbina Eólica Interativa</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000; /* Mudado para preto */
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            display: none; /* Removido o efeito de gradiente */
+        }
+        h1 {
+            text-shadow: 
+                4.5px 4.5px 0 #000,
+                -4.5px 4.5px 0 #000,
+                -4.5px -4.5px 0 #000,
+                4.5px -4.5px 0 #000;
+            font-size: 75px;
+            color: white;
+        }
+        h2 {
+            font-size: 45px;
+            color: white;
+        }
+        p {
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        #turbine {
+            width: 210px;
+            height: 330px;
+            margin: 30px auto;
+            position: relative;
+        }
+        .pole {
+            position: absolute;
+            width: 15px;
+            height: 210px;
+            background: linear-gradient(to bottom, #ffffff, #c7c7c7);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        .blade {
+            position: absolute;
+            width: 15px;
+            height: 120px;
+            background: linear-gradient(to bottom, #adadad, #ffffff);
+            border-radius: 30px;
+            top: 0;
+            left: 50%;
+            transform-origin: 50% 100%;
+            box-shadow: 0 3px 7.5px rgba(0, 0, 0, 0.2);
+        }
+        #blade1 { transform: translateX(-50%) rotate(0deg); }
+        #blade2 { transform: translateX(-50%) rotate(120deg); }
+        #blade3 { transform: translateX(-50%) rotate(240deg); }
+        #speedControl {
+            margin: 30px auto;
+            display: block;
+            width: 300px;
+            height: 30px;
+        }
+        #energyOutput, #windSpeedOutput {
+            margin-top: 30px;
+            font-size: 30px;
+            color: white;
+        }
+        #info {
+            margin: 30px 0;
+            font-size: 18px; // Reduzido um pouco para não competir com as outras informações
+            color: #a0a0a0; // Um cinza claro para diferenciar das outras informações principais
+            max-width: 600px; // Limita a largura para melhor legibilidade
+            line-height: 1.4; // Melhora o espaçamento entre linhas
+        }
+        label {
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Atualizar o estilo para posicionar o botão */
+        .button-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Energia Eólica Interativa</h1>
+    <div id="turbine">
+        <div class="pole"></div>
+        <div class="blade" id="blade1"></div>
+        <div class="blade" id="blade2"></div>
+        <div class="blade" id="blade3"></div>
+    </div>
+
+    <input type="range" id="speedControl" min="0" max="20" step="1" value="0">
+    <label for="speedControl">Velocidade do Vento (km/h)</label>
+
+    <div id="windSpeedOutput"><p>Velocidade do Vento: 0 km/h</p></div>
+    <div id="energyOutput"><p>Energia Eólica Disponível: 0 W</p></div>
+
+    <div id="info">
+        <p>Simulação baseada em uma turbina com 137m de diâmetro e 40% de eficiência.</p>
+    </div>
+
+    <!-- Substitua o antigo botão por este novo -->
+    <div class="button-container">
+        <a href="index.html" class="cssbuttons-io-button">
+            ㅤㅤVoltarㅤㅤ
+            <div class="icon"> 
+                <svg
+                    height="24"
+                    width="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor">
+                </path>
+                </svg>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        const speedControl = document.getElementById('speedControl');
+        const energyOutput = document.getElementById('energyOutput');
+        const windSpeedOutput = document.getElementById('windSpeedOutput');
+        const blades = document.querySelectorAll('.blade');
+
+        let currentRotation = 0;
+
+        function updateBlades() {
+            const speedKmh = speedControl.value;
+            const speedMs = speedKmh / 3.6;
+
+            const rho = 1.225;
+            const diameter = 137;
+            const area = Math.PI * Math.pow(diameter / 2, 2);
+            const Cp = 0.4;
+
+            const power = 0.5 * rho * area * Math.pow(speedMs, 3) * Cp;
+            
+            energyOutput.textContent = `Energia Gerada: ${Math.round(power)} W`;
+            windSpeedOutput.textContent = `Velocidade do Vento: ${speedKmh} km/h`;
+
+            currentRotation += speedKmh * 0.1;
+            blades.forEach((blade, index) => {
+                blade.style.transform = `translateX(-50%) rotate(${currentRotation + index * 120}deg)`;
+            });
+        }
+
+        speedControl.addEventListener('input', updateBlades);
+
+        function animateBlades() {
+            updateBlades();
+            requestAnimationFrame(animateBlades);
+        }
+
+        animateBlades();
+    </script>
+</body>
+</html>

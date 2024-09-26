@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbina Eólica Interativa</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            margin: 0;
+            padding: 20px;
+            background-color: #000 ;
+            text-align: center;
+        }
+        h1 {
+            text-shadow:     
+            3px 3px 0 #000,
+            -3px 3px 0 #000,
+            -3px -3px 0 #000,
+            3px -3px 0 #000;
+            font-size: 50px;
+            color: white;
+        }
+        h2 {
+            color: white;
+            font-size: 30px;
+        }
+        p {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #info {
+            padding: 250px;
+        }
+        /* Novo estilo para posicionar o botão */
+        .button-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="info">
+    <h2>O que é Energia Eólica?</h2>
+    <p>
+        A energia eólica é a energia obtida a partir do vento. Esta energia é gerada por turbinas eólicas que convertem a energia cinética do vento em energia elétrica. É uma fonte de energia renovável, limpa e sustentável, que ajuda a reduzir a dependência de combustíveis fósseis e a mitigar as mudanças climáticas.
+    </p>
+    <h2>Cálculo da Energia Gerada</h2>
+    <p>
+        A energia gerada por uma turbina eólica pode ser calculada pela fórmula:
+    </p>
+    <p>
+        <strong>P = (1/2) * ρ * A * v³ * C<sub>p</sub></strong>
+    </p>
+    <p>
+        Onde:<br>
+        • P = potência (em watts)<br>
+        • ρ = densidade do ar (aprox. 1,225 kg/m³)<br>
+        • A = área varrida pelas lâminas (em m²)<br>
+        • v = velocidade do vento (em m/s)<br>
+        • C<sub>p</sub> = coeficiente de potência (geralmente entre 0,4 e 0,5)
+    </p>
+    <!-- Adicione este novo botão -->
+    <div class="button-container">
+        <a href="index.html" class="cssbuttons-io-button">
+            ㅤㅤVoltarㅤㅤ
+            <div class="icon"> 
+                <svg
+                    height="24"
+                    width="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor">
+                </path>
+                </svg>
+            </div>
+        </a>
+    </div>
+</div>
+</body>
+</html>
